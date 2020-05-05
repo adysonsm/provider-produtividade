@@ -1,19 +1,29 @@
 <div class="row" *ngIf="step===0">
   <div class="col-xxl-12">
     <nb-card accent="info">
-      <nb-card-header>Selecione o Estado</nb-card-header>
+      <nb-card-header>Selecione a Unidade </nb-card-header>
       <nb-card-body>
         <div class="row">
           <div class="col-md-12 col-12">
-            <nb-list-item class="d-flex justify-content-between">
-              <img src="assets/images/sp.svg" class="img-fluid" style="max-width: 100px;">
-              <button class="btn btn-primary " (click)="advanceStep()">São Paulo</button>
+            <nb-list-item class="list-group-item-action align-content-center">
+              <a (click)="advanceStep()" class="d-flex justify-content-between align-center w-100 h-100"
+                style="cursor: pointer;">
+                <img src="assets/images/rj.svg" class="img-fluid" style="max-width: 100px;">
+                <div class="mt-4">
+                  <p>Rio de Janeiro</p>
+                </div>
+              </a>
             </nb-list-item>
           </div>
           <div class="col-md-12 col-12">
-            <nb-list-item class="d-flex justify-content-between">
-              <img src="assets/images/rj.svg" class="img-fluid" style="max-width: 100px;">
-              <button class="btn btn-primary">Rio de Janeio</button>
+            <nb-list-item class="  list-group-item-action align-content-center">
+              <a (click)="advanceStep()" class="d-flex justify-content-between align-center w-100 h-100"
+                style="cursor: pointer;">
+                <img src="assets/images/sp.svg" class="img-fluid" style="max-width: 100px;">
+                <div class="mt-4">
+                  <p>São Paulo</p>
+                </div>
+              </a>
             </nb-list-item>
           </div>
         </div>
@@ -28,33 +38,44 @@
     <nb-card>
       <nb-card-header>
         <a (click)="backStep()">
-          <nb-icon icon="arrow-back-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"
-            style="font-size: 30px;"></nb-icon> <br>
-        </a> Lista de Clientes SP </nb-card-header>
+          <nb-icon icon="arrow-back-outline" class="mr-2" status="primary" [options]="{ animation: { type: 'zoom' } }"
+            style="font-size: 40px;"></nb-icon>
+        </a>
+        <div class="">
+          <div>Lista de Clientes SP</div>
+        </div>
+
+      </nb-card-header>
       <nb-card-body>
+        <div class="row text-center">
+          <div class="col-12">
+            <nav aria-label="breadcrumb ">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">Unidades</li>
+                <li class="breadcrumb-item page-active">Clientes</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
         <div class="row">
           <div class="col-md-12 col-12">
-            <nb-list-item class="d-flex justify-content-between">
-              <h6>Original</h6>
-              <button class="btn btn-primary" (click)="advanceStep()">detalhes</button>
+            <nb-list-item class="list-group-item-action align-content-center" (click)="advanceStep()">
+              <p>Azul</p>
             </nb-list-item>
           </div>
           <div class="col-md-12 col-12">
-            <nb-list-item class="d-flex justify-content-between">
-              <h6>Fibra</h6>
-              <button class="btn btn-primary ">detalhes</button>
+            <nb-list-item class="list-group-item-action align-content-center" (click)="advanceStep()">
+              <p>Cielo</p>
             </nb-list-item>
           </div>
           <div class="col-md-12 col-12">
-            <nb-list-item class="d-flex justify-content-between">
-              <h6>Cielo</h6>
-              <button class="btn btn-primary ">detalhes</button>
+            <nb-list-item class="list-group-item-action align-content-center" (click)="advanceStep()">
+              <p>Banco Fibra</p>
             </nb-list-item>
           </div>
           <div class="col-md-12 col-12">
-            <nb-list-item class="d-flex justify-content-between">
-              <h6>Azul</h6>
-              <button class="btn btn-primary ">detalhes</button>
+            <nb-list-item class="list-group-item-action align-content-center" (click)="advanceStep()">
+              <p>Banco Original</p>
             </nb-list-item>
           </div>
         </div>
@@ -69,62 +90,76 @@
     <nb-card>
       <nb-card-header><a (click)="backStep()">
           <nb-icon icon="arrow-back-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"
-            style="font-size: 30px;"></nb-icon>
-        </a><br> São Paulo <br> Original </nb-card-header>
+            style="font-size: 40px;"></nb-icon>
+        </a>
+        <div>
+          <div>Unidade: São Paulo</div>
+          <div>Cliente: Original </div>
+        </div>
+      </nb-card-header>
       <nb-card-body>
-        <h6>Gestores dos clientes</h6>
-        <div class="row p-2" style="background-color:#f7f9fc;">
-          <div class="col-12 d-flex justify-content-end p-4">
-            <button class="btn btn-primary">
-              <nb-icon icon="person-add-outline" status="control" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
-            </button>
+        <div class="row">
+          <div class="col-12">
+            <nav aria-label="breadcrumb ">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">Unidades</li>
+                <li class="breadcrumb-item">Clientes</li>
+                <li class="breadcrumb-item page-active">Projetos</li>
+              </ol>
+            </nav>
           </div>
-          <div class="col-4">
+        </div>
+        <div class="row" style="background-color:#f7f9fc;">
+          <div class="col-12">
+            <p>Gestores de referência <a class="ml-2">
+                <nb-icon icon="person-add-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-3 col-4">
             <p>Luis Oliveira</p>
           </div>
-          <div class="col-4">
+          <div class="col-md-3 col-4">
             <p>luis@gmail.com</p>
           </div>
-          <div class="col-4">
-            <a href="#" class="mr-2">
-              <nb-icon icon="trash-2-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"
-                style="font-size: 30px;"></nb-icon>
+          <div class="col-md-3 col-4">
+            <a href="#">
+              <nb-icon icon="trash-2-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
             </a> <a href="#">
-              <nb-icon icon="edit-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"
-                style="font-size: 30px;"></nb-icon>
+              <nb-icon icon="edit-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
             </a>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col-12">
-            <h6>Lista de WBS</h6>
-            <table class="table table-hover">
+            <p>Lista de Projetos</p>
+            <table class="table table-hover table-responsive-sm">
               <thead>
                 <tr>
+                  <th scope="col"></th>
                   <th scope="col">WBS</th>
                   <th scope="col">Nome do Projeto</th>
                   <th scope="col">Gestor Provider</th>
-                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">231231231</th>
+                <tr (click)="advanceStep()">
+                  <th scope="row">1</th>
+                  <td>49129</td>
                   <td>Liguidação de Renovação</td>
                   <td>Claudio</td>
-                  <td><button class="btn btn-primary" (click)="advanceStep()">detalhes</button></td>
                 </tr>
-                <tr>
-                  <th scope="row">231231231</th>
-                  <td>Liguidação de Renovação</td>
+                <tr (click)="advanceStep()">
+                  <th scope="row">2</th>
+                  <td scope="row">995582</td>
+                  <td>XYPTO</td>
                   <td>Claudio</td>
-                  <td><button class="btn btn-primary">detalhes</button></td>
                 </tr>
-                <tr>
-                  <th scope="row">231231231</th>
-                  <td>Liguidação de Renovação</td>
+                <tr (click)="advanceStep()">
+                  <th scope="row">3</th>
+                  <td scope="row">948293</td>
+                  <td>Nova Gestão</td>
                   <td>Claudio</td>
-                  <td><button class="btn btn-primary">detalhes</button></td>
                 </tr>
               </tbody>
             </table>
@@ -132,8 +167,12 @@
           </div>
         </div>
       </nb-card-body>
-      <nb-card-footer class="d-flex justify-content-end">
-        <button class="btn btn-secondary" (click)="advanceStep(true)">Ver todas</button>
+      <nb-card-footer class="">
+        <div class="row w-100 d-flex justify-content-center my-4">
+          <div class="col-12 col-md-4">
+            <button class="btn btn-secondary  w-100" (click)="advanceStep(true)">Ver Todos os Projetos</button>
+          </div>
+        </div>
       </nb-card-footer>
     </nb-card>
   </div>
@@ -145,20 +184,58 @@
       <nb-card-header>
         <a (click)="backStep()">
           <nb-icon icon="arrow-back-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"
-            style="font-size: 30px;"></nb-icon>
-        </a> <br> São Paulo <br> Original <br><span *ngIf="!frag">BV-WBS 4878 <br></span>Gestor Provide: Cláudio
-      </nb-card-header>
-      <nb-card-body>
-        <h6>Gestores dos clientes</h6>
-        <div class="row p-2 my-2" style="background-color:#f7f9fc;">
-          <div class="col-6">
-            <p>Luis Oliveira</p>
-          </div>
-          <div class="col-6">
-            <p>luis@gmail.com</p>
+            style="font-size: 40px;"></nb-icon>
+        </a>
+        <div>
+          <div>
+            <div>
+              Unidade: São Paulo
+            </div>
+            <div>
+              Cliente: Original
+            </div>
+            <div>
+              Gestor Provider: Claudio
+            </div>
           </div>
         </div>
+
+      </nb-card-header>
+      <nb-card-body>
         <div class="row">
+          <div class="col-12">
+            <nav aria-label="breadcrumb ">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">Unidades</li>
+                <li class="breadcrumb-item">Clientes</li>
+                <li class="breadcrumb-item">Projetos</li>
+                <li class="breadcrumb-item page-active">Referência</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="row" style="background-color:#f7f9fc;">
+          <div class="col-12">
+            <p>Gestores de referência <a class="ml-2">
+                <nb-icon icon="person-add-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-3 col-4">
+            <p>Luis Oliveira</p>
+          </div>
+          <div class="col-md-3 col-4">
+            <p>luis@gmail.com</p>
+          </div>
+          <div class="col-md-3 col-4">
+            <a href="#">
+              <nb-icon icon="trash-2-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+            </a> <a href="#">
+              <nb-icon icon="edit-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+            </a>
+          </div>
+        </div>
+        <div class="row my-2">
           <div class="col-12">
             <nb-select placeholder="semestre" [(selected)]="selectedItem" class="mr-2">
               <nb-option value=""></nb-option>
@@ -174,46 +251,47 @@
           </div>
         </div>
         <div class="row mt-3">
+          <!-- <span >BV-WBS 4878 <br></span>Gestor Provide: Cláudio -->
           <div class="col-12">
-            <table class="table table-hover">
+            <p *ngIf="!frag">WBS-4912 - Liguidação de Renovação</p>
+            <p>Cliente Referência</p>
+            <table class="table table-hover table-responsive-sm">
               <thead>
                 <tr>
+
                   <th scope="col">Referência</th>
                   <th scope="col">Total de Recursos</th>
                   <th scope="col">TH</th>
                   <th scope="col">THN</th>
                   <th scope="col">THE</th>
                   <th scope="col">THSA</th>
-                  <th scope="col"></th>
+
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">jan/2020</th>
+                <tr (click)="advanceStep()">
+                  <th scope="row">FEV/2020</th>
                   <td>70</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
-                  <td><button class="btn btn-primary" (click)="advanceStep()">detalhes</button></td>
                 </tr>
-                <tr>
-                  <th scope="row">jan/2020</th>
+                <tr (click)="advanceStep()">
+                  <th scope="row">MAR/2020</th>
                   <td>70</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
-                  <td><button class="btn btn-primary">detalhes</button></td>
                 </tr>
-                <tr>
-                  <th scope="row">jan/2020</th>
+                <tr (click)="advanceStep()">
+                  <th scope="row">ABR/2020</th>
                   <td>70</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
-                  <td><button class="btn btn-primary">detalhes</button></td>
                 </tr>
               </tbody>
             </table>
@@ -231,63 +309,100 @@
 <div class="row p-2" *ngIf="step === 4">
   <div class="col-xxl-12">
     <nb-card>
-      <nb-card-header> <a (click)="backStep()">
+      <nb-card-header>
+        <a (click)="backStep()">
           <nb-icon icon="arrow-back-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"
-            style="font-size: 30px;"></nb-icon>
-        </a><br> São Paulo <br> Original <br><span *ngIf="!frag">BV-WBS 4878 <br></span> BV - Março/2020
+            style="font-size: 40px;"></nb-icon>
+        </a>
+        <div>
+          <div>
+            <div>
+              Unidade: São Paulo
+            </div>
+            <div>
+              Cliente: Original
+            </div>
+            <div>
+              Gestor Provider: Claudio
+            </div>
+          </div>
+        </div>
       </nb-card-header>
       <nb-card-body>
-        <h6>Gestores dos clientes</h6>
-        <div class="row p-2 my-2" style="background-color:#f7f9fc;">
-          <div class="col-6">
+        <div class="row">
+          <div class="col-12">
+            <nav aria-label="breadcrumb ">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">Unidades</li>
+                <li class="breadcrumb-item">Clientes</li>
+                <li class="breadcrumb-item">Projetos</li>
+                <li class="breadcrumb-item">Referência</li>
+                <li class="breadcrumb-item page-active">WBS/Recursos</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="row" style="background-color:#f7f9fc;">
+          <div class="col-12">
+            <p>Gestores de referência <a class="ml-2">
+                <nb-icon icon="person-add-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-3 col-4">
             <p>Luis Oliveira</p>
           </div>
-          <div class="col-6">
+          <div class="col-md-3 col-4">
             <p>luis@gmail.com</p>
+          </div>
+          <div class="col-md-3 col-4">
+            <a href="#">
+              <nb-icon icon="trash-2-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+            </a> <a href="#">
+              <nb-icon icon="edit-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+            </a>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col-12">
-            <h6>Lista de Recursos</h6>
-            <table class="table table-hover">
+            <p *ngIf="!frag">WBS-4912 - Liguidação de Renovação</p>
+            <p>Lista de Recursos</p>
+            <p>JANEIRO/2020</p>
+            <table class="table table-hover table-responsive-sm">
               <thead>
                 <tr>
-                  <th scope="col"  *ngIf="frag">WBS</th>
+                  <th scope="col" *ngIf="frag">WBS</th>
                   <th scope="col">Nome</th>
                   <th scope="col">TH</th>
                   <th scope="col">THN</th>
                   <th scope="col">THE</th>
                   <th scope="col">THSA</th>
-                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row"*ngIf="frag">WBS 4289 - Liquidação de Renovação</th>
+                <tr (click)="advanceStep()">
+                  <th scope="row" *ngIf="frag">WBS 4289 - Liquidação de Renovação</th>
                   <th scope="row">Adyson</th>
-                  <td>70</td>
+                  <td>90</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
-                  <td><button class="btn btn-primary" (click)="advanceStep()">detalhes</button></td>
                 </tr>
-                <tr>
+                <tr (click)="advanceStep()">
                   <th scope="row" *ngIf="frag">WBS 4289 - Liquidação de Renovação</th>
                   <th scope="row">LH</th>
-                  <td>70</td>
+                  <td>30</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
-                  <td><button class="btn btn-primary">detalhes</button></td>
                 </tr>
-                <tr>
+                <tr (click)="advanceStep()">
                   <th scope="row" *ngIf="frag">WBS 4289 - Liquidação de Renovação</th>
                   <th scope="row">Matheus</th>
-                  <td>70</td>
+                  <td>80</td>
                   <td>1000</td>
                   <td>1000</td>
                   <td>1000</td>
-                  <td><button class="btn btn-primary">detalhes</button></td>
                 </tr>
               </tbody>
             </table>
@@ -306,27 +421,69 @@
 <div class="row p-2" *ngIf="step === 5">
   <div class="col-xxl-12">
     <nb-card>
-      <nb-card-header> <a (click)="backStep()">
+      <nb-card-header>
+        <a (click)="backStep()">
           <nb-icon icon="arrow-back-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"
-            style="font-size: 30px;"></nb-icon>
-        </a><br>São Paulo <br> Original <br><span *ngIf="!frag">BV-WBS 4878 <br></span>Gestor Provide: Cláudio <br> BV - Março/2020
+            style="font-size: 40px;"></nb-icon>
+        </a>
+        <div>
+          <div>
+            <div>
+              Unidade: São Paulo
+            </div>
+            <div>
+              Cliente: Original
+            </div>
+            <div>
+              Gestor Provider: Claudio
+            </div>
+            <div>
+              WBS-4912 - Janeiro/2020
+            </div>
+          </div>
+        </div>
       </nb-card-header>
       <nb-card-body>
-        <h6>Gestores do Cliente</h6>
-        <div class="row p-2" style="background-color:#f7f9fc;">
-          <div class="col-3">
+
+        <div class="row">
+          <div class="col-12">
+            <nav aria-label="breadcrumb ">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">Unidades</li>
+                <li class="breadcrumb-item">Clientes</li>
+                <li class="breadcrumb-item">Projetos</li>
+                <li class="breadcrumb-item">Referência</li>
+                <li class="breadcrumb-item">WBS/Recursos</li>
+                <li class="breadcrumb-item page-active">Recurso</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="row" style="background-color:#f7f9fc;">
+          <div class="col-12">
+            <p>Gestores de referência <a class="ml-2">
+                <nb-icon icon="person-add-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-3 col-4">
             <p>Luis Oliveira</p>
           </div>
-          <div class="col-3">
+          <div class="col-md-3 col-4">
             <p>luis@gmail.com</p>
           </div>
-          <div class="col-3">
+          <div class="col-md-3 col-4">
+            <a href="#">
+              <nb-icon icon="trash-2-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+            </a> <a href="#">
+              <nb-icon icon="edit-outline" status="primary" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+            </a>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col-12">
 
-            <table class="table table-borderless">
+            <table class="table table-borderless table-responsive" style="padding: 0.4rem;">
               <thead>
                 <tr>
                   <th scope="col">Recurso</th>
@@ -345,9 +502,11 @@
               </tbody>
             </table>
 
-            <table class="table table-hover">
+            <p>Timesheet</p>
+            <table class="table table-hover table-responsive-sm">
               <thead>
                 <tr>
+                  <th>Data</th>
                   <th scope="col">HI</th>
                   <th scope="col">HT</th>
                   <th scope="col">H</th>
@@ -356,21 +515,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">10</th>
-                  <td>70</td>
-                  <td>1000</td>
+                  <th scope="row">01/MAR</th>
+                  <td>10</td>
+                  <td>10</td>
+                  <td>20</td>
                   <td>Capacitação feita, aprendizado em computação avançada</td>
                 </tr>
                 <tr>
-                  <th scope="row">10</th>
-                  <td>70</td>
-                  <td>1000</td>
+                  <th scope="row">01/MAR</th>
+                  <td>10</td>
+                  <td>10</td>
+                  <td>20</td>
                   <td>Capacitação feita, aprendizado em computação avançada</td>
                 </tr>
                 <tr>
-                  <th scope="row">10</th>
-                  <td>70</td>
-                  <td>1000</td>
+                  <th scope="row">01/MAR</th>
+                  <td>10</td>
+                  <td>10</td>
+                  <td>20</td>
                   <td>Capacitação feita, aprendizado em computação avançada</td>
                 </tr>
               </tbody>
